@@ -52,20 +52,39 @@
         }, 3000);
 
         console.log('next time 2');
-        */
-       
+        
+          */
 
         [
             'make dinner',
             'wash dishes',
             'watch youtube'
-        ].forEach(function(value, index) {
+        ].forEach((value, index) => {
+            if (value === 'wash dishes') {
+                return;
+            }
+
             console.log(index);
             console.log(value);
-
         });
+     
 
+        const arrowFunction = () => {
+            console.log('hello');
+        };
+        
+        arrowFunction();
 
+        const oneParam = param => {
+            console.log(param + 1);
+        };
+        oneParam(2);
+        
+        const oneLine = () =>  2 + 3;
+        console.log(oneLine());
+     
+
+            
 
 
 
