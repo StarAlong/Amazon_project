@@ -1,9 +1,9 @@
 let score = 
-                JSON.parse(localStorage.getItem('score')) || {
-                    wins: 0,
-                    losses: 0,
-                    ties: 0
-                };
+            JSON.parse(localStorage.getItem('score')) || {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
 
             updateScoreElement();
 
@@ -23,7 +23,20 @@ let score =
                 }   
             }
 
-           
+           document.querySelector('.js-rock-button') 
+            .addEventListener('click', () => {
+                playGame('rock')
+            })
+
+            document.querySelector('.js-paper-button') 
+            .addEventListener('click', () => {
+                playGame('paper')
+            })
+
+            document.querySelector('.js-scissors-button') 
+            .addEventListener('click', () => {
+                playGame('scissors')
+            })
 
             function playGame(playerMove) {
                 const computerMove = pickComputerMove();
@@ -78,8 +91,8 @@ let score =
 
                 document.querySelector('.js-moves').
                 innerHTML =   `You 
-            <img src="Amazon/images/${playerMove}-emoji.png" class="move-icon">
-            <img src="Amazon/images/${computerMove}-emoji.png" class="move-icon">
+            <img src="images/${playerMove}-emoji.png" class="move-icon">
+            <img src="images/${computerMove}-emoji.png" class="move-icon">
             Computer`;
 
 
