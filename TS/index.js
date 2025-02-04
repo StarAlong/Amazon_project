@@ -1,24 +1,11 @@
-
-type Area = {
-    height: number;
-    width: number; 
-};
-
-type Address = {
-    num:number 
-    cell:number
-    room: string
-}
-
-type House = Area & Address
-const house: House = {
+"use strict";
+const house = {
     height: 100,
-    width: 100, 
-    num:5,
-    cell:6,
+    width: 100,
+    num: 5,
+    cell: 6,
     room: '502'
-
-}
+};
 /*
 const enum Direction {
     Up,
