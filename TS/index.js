@@ -1,12 +1,43 @@
 "use strict";
-const house = {
+/*
+const src = [1, 2, 3];
+const dst = [0];
+src.forEach((el) => {
+    dst.push(el)
+});
+
+src.forEach((el) =>  dst.push(el));
+
+src.map((item)=>{
+    return item +1
+})
+*/
+const f1 = function () {
+    return 999;
+};
+let x = f1();
+console.log(x);
+/*
+type Area = {
+    height: number;
+    width: number;
+};
+
+type Address = {
+    num:number
+    cell:number
+    room: string
+}
+
+type House = Area & Address
+const house: House = {
     height: 100,
     width: 100,
-    num: 5,
-    cell: 6,
+    num:5,
+    cell:6,
     room: '502'
-};
-/*
+
+}
 const enum Direction {
     Up,
     Down,

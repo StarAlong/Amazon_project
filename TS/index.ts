@@ -1,4 +1,34 @@
 
+
+/*
+const src = [1, 2, 3];
+const dst = [0];
+src.forEach((el) => {
+    dst.push(el)
+});
+
+src.forEach((el) =>  dst.push(el));
+
+src.map((item)=>{
+    return item +1
+})
+*/
+
+type LogFunc = () => void
+
+const f1:LogFunc = function() {
+    return 999
+}
+
+let x = f1()
+console.log(x)
+
+if (x) {
+    
+}
+
+
+/*
 type Area = {
     height: number;
     width: number; 
@@ -19,7 +49,6 @@ const house: House = {
     room: '502'
 
 }
-/*
 const enum Direction {
     Up,
     Down,
