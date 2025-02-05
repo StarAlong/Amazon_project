@@ -1,3 +1,39 @@
+abstract class Package {
+    constructor(public weight:number) {}
+        // abs method
+        abstract calculate(): number
+        // (x: number, y: string): void 
+        printPackage() {
+            console.log(`包裹: ${this.weight}, 运费${this.calculate()}`);
+        }
+    }
+    
+    class StandardPackage extends Package {
+        constructor(
+            weight: number,
+            public unitPrice: number
+        ) {super(weight)}
+        calculate(): number {
+            return this.weight * this.unitPrice;           
+        }
+    }
+    class ExpressPackage extends Package {
+        constructor(
+            weight: number,
+            public unitPrice: number,
+            public additional: number
+        ) {super(weight)}
+        calculate(): number {
+            return this.weight * this.unitPrice;           
+        }
+    }
+
+const e1 = new ExpressPackage(13, 9, 2)
+e1.printPackage();
+
+
+const s1 = new StandardPackage(10,5)
+s1.printPackage();
 
 
 

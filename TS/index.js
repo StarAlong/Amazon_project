@@ -1,4 +1,36 @@
 "use strict";
+class Package {
+    constructor(weight) {
+        this.weight = weight;
+    }
+    // (x: number, y: string): void 
+    printPackage() {
+        console.log(`包裹: ${this.weight}, 运费${this.calculate()}`);
+    }
+}
+class StandardPackage extends Package {
+    constructor(weight, unitPrice) {
+        super(weight);
+        this.unitPrice = unitPrice;
+    }
+    calculate() {
+        return this.weight * this.unitPrice;
+    }
+}
+class ExpressPackage extends Package {
+    constructor(weight, unitPrice, additional) {
+        super(weight);
+        this.unitPrice = unitPrice;
+        this.additional = additional;
+    }
+    calculate() {
+        return this.weight * this.unitPrice;
+    }
+}
+const e1 = new ExpressPackage(13, 9, 2);
+e1.printPackage();
+const s1 = new StandardPackage(10, 5);
+s1.printPackage();
 /*
 class Person {
     // public name:string
