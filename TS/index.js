@@ -1,4 +1,29 @@
 "use strict";
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    speak() {
+        console.log(`my name is${this.name}, ${this.age}`);
+    }
+}
+class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age);
+        this.grade = grade;
+    }
+    study() {
+        console.log(`${this.name} 正在努力学习...`);
+    }
+    speak() {
+        console.log(`my name is${this.name}, ${this.age}`);
+    }
+}
+const s1 = new Student('along', 18, 'gaosan');
+console.log(s1);
+s1.study();
+s1.speak();
 /*
 const src = [1, 2, 3];
 const dst = [0];
@@ -11,13 +36,23 @@ src.forEach((el) =>  dst.push(el));
 src.map((item)=>{
     return item +1
 })
-*/
-const f1 = function () {
-    return 999;
-};
-let x = f1();
-console.log(x);
-/*
+
+
+type LogFunc = () => void
+
+const f1:LogFunc = function() {
+    return 999
+}
+
+let x = f1()
+console.log(x)
+
+if (x) {
+    
+}
+
+
+
 type Area = {
     height: number;
     width: number;

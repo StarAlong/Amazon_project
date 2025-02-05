@@ -18,12 +18,17 @@ class Student extends Person{
         this.grade = grade
     }
     study() {
-        console.log(`${this.name} is study...`)
+        console.log(`${this.name} 正在努力学习...`)
+    }
+    override speak() {
+        console.log(`my name is${this.name}, ${this.age}`)
     }
 }
-const p1 = new Person('along', 18, 'gaosan')
-console.log(p1)
-p1.speak
+const s1 = new Student('along', 18, 'gaosan')
+console.log(s1)
+s1.study()
+s1.speak()
+
 
 
 
