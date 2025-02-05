@@ -1,4 +1,37 @@
 
+class Person {
+    name:string
+    age: number
+    constructor(name:string,age:number) {
+    this.name = name
+    this.age = age
+    }
+    speak() {
+        console.log(`my name is${this.name}, ${this.age}`)
+    }
+}
+
+class Student extends Person{
+    grade: string
+    constructor (name:string, age:number, grade:string) {
+        super(name, age)
+        this.grade = grade
+    }
+    study() {
+        console.log(`${this.name} is study...`)
+    }
+}
+const p1 = new Person('along', 18, 'gaosan')
+console.log(p1)
+p1.speak
+
+
+
+
+
+
+
+
 
 /*
 const src = [1, 2, 3];
@@ -12,7 +45,7 @@ src.forEach((el) =>  dst.push(el));
 src.map((item)=>{
     return item +1
 })
-*/
+
 
 type LogFunc = () => void
 
@@ -28,7 +61,7 @@ if (x) {
 }
 
 
-/*
+
 type Area = {
     height: number;
     width: number; 
