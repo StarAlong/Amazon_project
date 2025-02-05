@@ -1,15 +1,29 @@
 
+
+
+
+
+
+/*
 class Person {
-    name:string
-    age: number
-    constructor(name:string,age:number) {
-    this.name = name
-    this.age = age
+    // public name:string
+    // public age: number
+    constructor(protected name:string,readonly age:number) {
+    // this.name = name
+    // this.age = age
     }
-    speak() {
+    protected speak() {
         console.log(`my name is${this.name}, ${this.age}`)
     }
 }
+
+const p1 = new Person('tom', 18)
+p1.name
+p1.age = 20
+p1.speak()
+
+
+
 
 class Student extends Person{
     grade: string
@@ -29,16 +43,6 @@ console.log(s1)
 s1.study()
 s1.speak()
 
-
-
-
-
-
-
-
-
-
-/*
 const src = [1, 2, 3];
 const dst = [0];
 src.forEach((el) => {

@@ -1,30 +1,43 @@
 "use strict";
+/*
 class Person {
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
+    // public name:string
+    // public age: number
+    constructor(protected name:string,readonly age:number) {
+    // this.name = name
+    // this.age = age
     }
-    speak() {
-        console.log(`my name is${this.name}, ${this.age}`);
+    protected speak() {
+        console.log(`my name is${this.name}, ${this.age}`)
     }
 }
-class Student extends Person {
-    constructor(name, age, grade) {
-        super(name, age);
-        this.grade = grade;
+
+const p1 = new Person('tom', 18)
+p1.name
+p1.age = 20
+p1.speak()
+
+
+
+
+class Student extends Person{
+    grade: string
+    constructor (name:string, age:number, grade:string) {
+        super(name, age)
+        this.grade = grade
     }
     study() {
-        console.log(`${this.name} 正在努力学习...`);
+        console.log(`${this.name} 正在努力学习...`)
     }
-    speak() {
-        console.log(`my name is${this.name}, ${this.age}`);
+    override speak() {
+        console.log(`my name is${this.name}, ${this.age}`)
     }
 }
-const s1 = new Student('along', 18, 'gaosan');
-console.log(s1);
-s1.study();
-s1.speak();
-/*
+const s1 = new Student('along', 18, 'gaosan')
+console.log(s1)
+s1.study()
+s1.speak()
+
 const src = [1, 2, 3];
 const dst = [0];
 src.forEach((el) => {
