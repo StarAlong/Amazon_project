@@ -1,3 +1,5 @@
+
+
 abstract class Package {
     constructor(public weight:number) {}
         // abs method
