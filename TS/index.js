@@ -1,8 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const demo_js_1 = require("./demo.js");
-console.log((0, demo_js_1.add)(1, 2));
-console.log((0, demo_js_1.mul)(1, 2));
+import { add, mul } from './demo.js';
+console.log(add(1, 2));
+console.log(mul(1, 2));
 /*
 function logData<T, U>(data1:T, data2: U) {
     Date.now() % 2 ? console.log(data1) : console.log(data2)
