@@ -1,4 +1,19 @@
 
+import {add, mul} from './demo.js'
+
+console.log(add(1, 2))
+console.log(mul(1, 2))
+
+
+/*
+function logData<T, U>(data1:T, data2: U) {
+    Date.now() % 2 ? console.log(data1) : console.log(data2)
+}
+
+logData<number>(100)
+logData<string>('hello')
+
+
 interface PersonInterface {
     name: string;
     age: number;
@@ -13,17 +28,9 @@ class Person implements PersonInterface{
     ){}
     speak(n:number): void{
         for (let index = 0; i < n; i++) {
-            console.log(`nihao,wojiao${this.name},jinnian ${this.age}sui`);
+            console.log(`Hi,name is${this.name}, im ${this.age}`);
         }
     }
-}
-
-const user: UserInterface = {
-
-}
-
-interface JackInterface extends UserInterface {
-    
 }
 
 

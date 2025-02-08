@@ -1,36 +1,81 @@
 "use strict";
-class Package {
-    constructor(weight) {
-        this.weight = weight;
-    }
-    // (x: number, y: string): void 
-    printPackage() {
-        console.log(`包裹: ${this.weight}, 运费${this.calculate()}`);
+Object.defineProperty(exports, "__esModule", { value: true });
+const demo_js_1 = require("./demo.js");
+console.log((0, demo_js_1.add)(1, 2));
+console.log((0, demo_js_1.mul)(1, 2));
+/*
+function logData<T, U>(data1:T, data2: U) {
+    Date.now() % 2 ? console.log(data1) : console.log(data2)
+}
+
+logData<number>(100)
+logData<string>('hello')
+
+
+interface PersonInterface {
+    name: string;
+    age: number;
+    speak(n:number):void
+}
+
+class Person implements PersonInterface{
+    constructor(
+        public name:string,
+        public age:number,
+
+    ){}
+    speak(n:number): void{
+        for (let index = 0; i < n; i++) {
+            console.log(`Hi,name is${this.name}, im ${this.age}`);
+        }
     }
 }
-class StandardPackage extends Package {
-    constructor(weight, unitPrice) {
-        super(weight);
-        this.unitPrice = unitPrice;
+
+
+
+/*
+abstract class Package {
+    constructor(public weight:number) {}
+        // abs method
+        abstract calculate(): number
+        // (x: number, y: string): void
+        printPackage() {
+            console.log(`包裹: ${this.weight}, 运费${this.calculate()}`);
+        }
     }
-    calculate() {
-        return this.weight * this.unitPrice;
+    
+    class StandardPackage extends Package {
+        constructor(
+            weight: number,
+            public unitPrice: number
+        ) {super(weight)}
+        calculate(): number {
+            return this.weight * this.unitPrice;
+        }
     }
-}
-class ExpressPackage extends Package {
-    constructor(weight, unitPrice, additional) {
-        super(weight);
-        this.unitPrice = unitPrice;
-        this.additional = additional;
+    class ExpressPackage extends Package {
+        constructor(
+            weight: number,
+            public unitPrice: number,
+            public additional: number
+        ) {super(weight)}
+        calculate(): number {
+            return this.weight * this.unitPrice;
+        }
     }
-    calculate() {
-        return this.weight * this.unitPrice;
-    }
-}
-const e1 = new ExpressPackage(13, 9, 2);
+
+const e1 = new ExpressPackage(13, 9, 2)
 e1.printPackage();
-const s1 = new StandardPackage(10, 5);
+
+
+const s1 = new StandardPackage(10,5)
 s1.printPackage();
+
+
+
+
+
+
 /*
 class Person {
     // public name:string
