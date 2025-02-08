@@ -1,5 +1,34 @@
 
+interface PersonInterface {
+    name: string;
+    age: number;
+    speak(n:number):void
+}
 
+class Person implements PersonInterface{
+    constructor(
+        public name:string,
+        public age:number,
+
+    ){}
+    speak(n:number): void{
+        for (let index = 0; i < n; i++) {
+            console.log(`nihao,wojiao${this.name},jinnian ${this.age}sui`);
+        }
+    }
+}
+
+const user: UserInterface = {
+
+}
+
+interface JackInterface extends UserInterface {
+    
+}
+
+
+
+/*
 abstract class Package {
     constructor(public weight:number) {}
         // abs method
