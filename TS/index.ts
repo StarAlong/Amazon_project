@@ -13,17 +13,9 @@ class Person implements PersonInterface{
     ){}
     speak(n:number): void{
         for (let index = 0; i < n; i++) {
-            console.log(`nihao,wojiao${this.name},jinnian ${this.age}sui`);
+            console.log(`Hi,name is${this.name}, im ${this.age}`);
         }
     }
-}
-
-const user: UserInterface = {
-
-}
-
-interface JackInterface extends UserInterface {
-    
 }
 
 
