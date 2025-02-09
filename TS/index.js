@@ -1,18 +1,19 @@
 "use strict";
-/*
-function Demo(target:Function) {
-    console.log(WebTransportDatagramDuplexStream)
-}
-*/
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function CustomString(target) {
-    target.prototype.toString = function () {
-        return JSON.stringify(this);
+function LogTime(target) {
+    return class extends target {
+        constructor(...args) {
+            super(...args);
+            this.createdTime = new Date();
+        }
+        getTime() {
+            return `该对象的创建时间是: ${this.createdTime}`;
+        }
     };
 }
 let Person = class Person {
@@ -20,14 +21,62 @@ let Person = class Person {
         this.name = name;
         this.age = age;
     }
+    speak() {
+        console.log('你好呀');
+    }
 };
 Person = __decorate([
-    CustomString
+    LogTime
 ], Person);
-const p1 = new Person('zhangsan', 18);
-console.log(p1.toString());
-Person.prototype.x = 99;
-console.log(p1.x);
+const p1 = new Person('张三', 18);
+console.log(p1);
+console.log(p1.getTime());
+/*
+type Constructor = {
+    new(...args:any[]):{}
+    wife:string
+}
+
+function test(fn:Constructor) {
+}
+
+class Person {
+    static wife:string
+}
+
+test (Person)
+
+function Demo(target:Function) {
+    console.log(WebTransportDatagramDuplexStream)
+}
+
+
+function CustomString(target:Function){
+    target.prototype.toString = function(){
+        return JSON.stringify(this)
+    }
+}
+
+@CustomString
+class Person {
+    name:string
+    age:number
+    constructor(name:string,age:number) {
+        this.name = name
+        this.age = age
+    }
+   //Object.seal(target.prototype)
+}
+
+const p1 = new Person('zhangsan', 18)
+console.log(p1.toString())
+interface Person {
+    x:number
+}
+Person.prototype.x = 99
+console.log(p1.x)
+
+*/
 //ts.ignore
 /*
 import {add, mul} from './demo.js'
