@@ -1,4 +1,35 @@
+/*
+function Demo(target:Function) {
+    console.log(WebTransportDatagramDuplexStream)
+}
+*/
 
+function CustomString(target:Function){
+    target.prototype.toString = function(){
+        return JSON.stringify(this)
+    }
+}
+
+@CustomString
+class Person {
+    name:string
+    age:number
+    constructor(name:string,age:number) {
+        this.name = name
+        this.age = age
+    }
+   //Object.seal(target.prototype)
+}
+
+const p1 = new Person('zhangsan', 18)
+console.log(p1.toString())
+interface Person {
+    x:number
+}
+Person.prototype.x = 99
+console.log(p1.x)
+//ts.ignore
+/*
 import {add, mul} from './demo.js'
 
 console.log(add(1, 2))

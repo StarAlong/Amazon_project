@@ -1,6 +1,41 @@
-import { add, mul } from './demo.js';
-console.log(add(1, 2));
-console.log(mul(1, 2));
+"use strict";
+/*
+function Demo(target:Function) {
+    console.log(WebTransportDatagramDuplexStream)
+}
+*/
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+function CustomString(target) {
+    target.prototype.toString = function () {
+        return JSON.stringify(this);
+    };
+}
+let Person = class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+};
+Person = __decorate([
+    CustomString
+], Person);
+const p1 = new Person('zhangsan', 18);
+console.log(p1.toString());
+Person.prototype.x = 99;
+console.log(p1.x);
+//ts.ignore
+/*
+import {add, mul} from './demo.js'
+
+console.log(add(1, 2))
+console.log(mul(1, 2))
+
+
 /*
 function logData<T, U>(data1:T, data2: U) {
     Date.now() % 2 ? console.log(data1) : console.log(data2)
